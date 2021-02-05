@@ -1,0 +1,134 @@
+html {
+  background: white url(fox.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'helvetica neue';
+  text-align: center;
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  /* background: linear-gradient(to right top,
+      #65dfc9,
+      #6cdbeb); */
+}
+
+.clock {
+  width: 50rem;
+  height: 50rem;
+  border: 10px solid white;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  background: linear-gradient(to right bottom,
+      rgb(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3));
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1),
+    inset 0 0 10px black,
+    0 0 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5rem);
+
+
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px);
+}
+
+.dot {
+  top: 49%;
+  right: 48%;
+  position: absolute;
+  background: #022546;
+  height: 12px;
+  width: 15px;
+}
+
+.hand {
+  width: 50%;
+  height: 6px;
+  background: #022546;
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.5s;
+  transition-timing-function: cubic-bezier(0.1, 1.5, 0.8, 1);
+}
+
+.hour-hand {
+  width: 150px;
+  right: 50%;
+}
+
+.second-hand {
+  background: #29b6f6;
+  height: 2px;
+  z-index: -1;
+}
+
+.circle1,
+.circle2 {
+  background: white;
+  background: linear-gradient(to right bottom,
+      rgb(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.1));
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.circle1 {
+  animation: orbit 5s linear infinite;
+
+  top: 40%;
+  right: 40%;
+  background: linear-gradient(to right top,
+      #65dfc9,
+      #6cdbeb);
+  ;
+}
+
+.circle2 {
+  animation: orbit 4s linear infinite;
+  bottom: 45%;
+  left: 40%;
+  background: linear-gradient(to right top,
+      #65dfc9,
+      #6cdbeb);
+  ;
+
+}
+
+@media screen and (max-width: 875px) {
+  html {
+    background: white url(fox2.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
